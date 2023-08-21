@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 
 def AlgoSource(localDate: str) -> tuple[int, int, int, int, int, int, int, int, int, int, float, float, float, float, float, int, float, float]:
     '''
-    檢查 爬蟲日(BaseDate) == 期貨日(srcDate) == 加權API日 == PutCallRatio日
+    爬蟲日儘量與資料日同一天，不然怕資料來源不一致
     '''
     url1 = "https://www.twse.com.tw/fund/BFI82U?response=csv&dayDate=" + pd.to_datetime(localDate).strftime("%Y%m%d") +"&type=day"
     url2 = "https://www.taifex.com.tw/cht/3/futContractsDate"
